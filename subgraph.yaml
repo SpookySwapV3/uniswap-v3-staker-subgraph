@@ -1,0 +1,74 @@
+specVersion: 0.0.4
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum/contract
+    name: NFTPositionsManager
+    network: goat-testnet
+    source:
+      address: '0xEdF5893bBFa684aB152090cA56C639C73F23e1Bc'
+      abi: NFTPositionsManager
+      startBlock: 410093 
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - Approval
+        - ApprovalForAll
+        - Collect
+        - DecreaseLiquidity
+        - IncreaseLiquidity
+        - Transfer
+      abis:
+        - name: NFTPositionsManager
+          file: ./abis/NFTPositionsManager.json
+      eventHandlers:
+        - event: Approval(indexed address,indexed address,indexed uint256)
+          handler: handleApproval
+        - event: ApprovalForAll(indexed address,indexed address,bool)
+          handler: handleApprovalForAll
+        - event: Collect(indexed uint256,address,uint256,uint256)
+          handler: handleCollect
+        - event: DecreaseLiquidity(indexed uint256,uint128,uint256,uint256)
+          handler: handleDecreaseLiquidity
+        - event: IncreaseLiquidity(indexed uint256,uint128,uint256,uint256)
+          handler: handleIncreaseLiquidity
+        - event: Transfer(indexed address,indexed address,indexed uint256)
+          handler: handleTransfer
+      file: ./src/nft-positions-manager-mapping.ts
+  - kind: ethereum/contract
+    name: UniV3Staker
+    network: goat-testnet
+    source:
+      address: '0xd9D1f59E64e89Ff0d5AD58b4f6fC242E59490eCA'
+      abi: UniV3Staker
+      startBlock: 410110
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - DepositTransferred
+        - IncentiveCreated
+        - IncentiveEnded
+        - RewardClaimed
+        - TokenStaked
+        - TokenUnstaked
+      abis:
+        - name: UniV3Staker
+          file: ./abis/UniV3Staker.json
+      eventHandlers:
+        - event: DepositTransferred(indexed uint256,indexed address,indexed address)
+          handler: handleDepositTransferred
+        - event: IncentiveCreated(indexed address,indexed address,uint256,uint256,address,uint256)
+          handler: handleIncentiveCreated
+        - event: IncentiveEnded(indexed bytes32,uint256)
+          handler: handleIncentiveEnded
+        - event: RewardClaimed(indexed address,uint256)
+          handler: handleRewardClaimed
+        - event: TokenStaked(indexed uint256,indexed bytes32,uint128)
+          handler: handleTokenStaked
+        - event: TokenUnstaked(indexed uint256,indexed bytes32)
+          handler: handleTokenUnstaked
+      file: ./src/uni-v3-staker-mapping.ts

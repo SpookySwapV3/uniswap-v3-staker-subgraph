@@ -10,6 +10,7 @@
     "deploy:mainnet": "graph deploy --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ -- vbstreetz/witswap-staking subgraph-mainnet.yaml"
   },
   "dependencies": {
-    
+    "@graphprotocol/graph-cli": "^0.87.0",
+    "@graphprotocol/graph-ts": "^0.35.1"
   }
 }

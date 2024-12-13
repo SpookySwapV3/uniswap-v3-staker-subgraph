@@ -4,9 +4,9 @@ schema:
 dataSources:
   - kind: ethereum/contract
     name: NFTPositionsManager
-    network: goat-testnet
+    network: sonic
     source:
-      address: '0xEdF5893bBFa684aB152090cA56C639C73F23e1Bc'
+      address: '0xBAb4A13713C4dfba3073d0b35e2829F8be800310'
       abi: NFTPositionsManager
       startBlock: 410093 
     mapping:
@@ -39,9 +39,9 @@ dataSources:
       file: ./src/nft-positions-manager-mapping.ts
   - kind: ethereum/contract
     name: UniV3Staker
-    network: goat-testnet
+    network: sonic
     source:
-      address: '0xd9D1f59E64e89Ff0d5AD58b4f6fC242E59490eCA'
+      address: '0xB77AF1B61015E3E984e1FaFE9B488296C020c7DA'
       abi: UniV3Staker
       startBlock: 410110
     mapping:

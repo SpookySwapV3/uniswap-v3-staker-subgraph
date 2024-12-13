@@ -61,7 +61,7 @@ dataSources:
       eventHandlers:
         - event: DepositTransferred(indexed uint256,indexed address,indexed address)
           handler: handleDepositTransferred
-        - event: IncentiveCreated(indexed address,indexed address,uint256,uint256,address,uint256)
+        - event: IncentiveCreated(indexed address,indexed address,uint256,uint256,address,uint256,uint256)
           handler: handleIncentiveCreated
         - event: IncentiveEnded(indexed bytes32,uint256)
           handler: handleIncentiveEnded

@@ -228,11 +228,17 @@
             "name": "endTime",
             "type": "uint256"
           },
+            {
+            "internalType": "uint256",
+            "name": "vestingPeriod",
+            "type": "uint256"
+          },
           {
             "internalType": "address",
             "name": "refundee",
             "type": "address"
           }
+        
         ],
         "internalType": "struct IUniswapV3Staker.IncentiveKey",
         "name": "key",
@@ -307,11 +313,17 @@
             "name": "endTime",
             "type": "uint256"
           },
+            {
+            "internalType": "uint256",
+            "name": "vestingPeriod",
+            "type": "uint256"
+          },
           {
             "internalType": "address",
             "name": "refundee",
             "type": "address"
           }
+        
         ],
         "internalType": "struct IUniswapV3Staker.IncentiveKey",
         "name": "key",
@@ -366,11 +378,17 @@
             "name": "endTime",
             "type": "uint256"
           },
+             {
+            "internalType": "uint256",
+            "name": "vestingPeriod",
+            "type": "uint256"
+          },
           {
             "internalType": "address",
             "name": "refundee",
             "type": "address"
           }
+        
         ],
         "internalType": "struct IUniswapV3Staker.IncentiveKey",
         "name": "key",
@@ -567,6 +585,11 @@
             "name": "endTime",
             "type": "uint256"
           },
+             {
+            "internalType": "uint256",
+            "name": "vestingPeriod",
+            "type": "uint256"
+          },
           {
             "internalType": "address",
             "name": "refundee",
@@ -659,11 +682,17 @@
             "name": "endTime",
             "type": "uint256"
           },
+           {
+            "internalType": "uint256",
+            "name": "vestingPeriod",
+            "type": "uint256"
+          },
           {
             "internalType": "address",
             "name": "refundee",
             "type": "address"
-          }
+          },
+         
         ],
         "internalType": "struct IUniswapV3Staker.IncentiveKey",
         "name": "key",

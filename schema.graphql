@@ -4,6 +4,7 @@ type Incentive @entity {
   pool: Bytes!
   startTime: BigInt!
   endTime: BigInt!
+  vestingPeriod: BigInt!
   refundee: Bytes!
   reward: BigInt!
   ended: Boolean!

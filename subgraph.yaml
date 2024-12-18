@@ -4,11 +4,11 @@ schema:
 dataSources:
   - kind: ethereum/contract
     name: NFTPositionsManager
-    network: sonic
+    network: fantom
     source:
-      address: '0xBAb4A13713C4dfba3073d0b35e2829F8be800310'
+      address: '0xb39d21718e24DE36fDD8c5C73e928B5EFF33d6C2'
       abi: NFTPositionsManager
-      startBlock: 410093 
+      startBlock: 70992943
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.6
@@ -39,11 +39,11 @@ dataSources:
       file: ./src/nft-positions-manager-mapping.ts
   - kind: ethereum/contract
     name: UniV3Staker
-    network: sonic
+    network: fantom
     source:
-      address: '0xB77AF1B61015E3E984e1FaFE9B488296C020c7DA'
+      address: '0xB203D94eBFCc177a17F7df1ec58016af666BB813'
       abi: UniV3Staker
-      startBlock: 410110
+      startBlock: 99268100
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.6

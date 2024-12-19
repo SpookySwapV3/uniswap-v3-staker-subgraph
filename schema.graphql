@@ -14,7 +14,7 @@ type Position @entity {
   id: ID!
   tokenId: BigInt!
   owner: Bytes!
-  staked: Boolean!
+  staked: BigInt!
   oldOwner: Bytes
   liquidity: BigInt!
   approved: Bytes

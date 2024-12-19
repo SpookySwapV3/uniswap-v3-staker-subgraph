@@ -8,6 +8,7 @@ import {
   TokenUnstaked,
 } from '../generated/UniV3Staker/UniV3Staker';
 import { Incentive, Position } from '../generated/schema';
+import { BigInt } from "@graphprotocol/graph-ts";
 
 export function handleIncentiveCreated(event: IncentiveCreated): void {
   let incentiveIdTuple: Array<ethereum.Value> = [
@@ -53,7 +54,7 @@ export function handleRewardClaimed(event: RewardClaimed): void { }
 export function handleTokenStaked(event: TokenStaked): void {
   let entity = Position.load(event.params.tokenId.toHex());
   if (entity != null) {
-    entity.staked = true;
+    entity.staked = event.block.timestamp;
     entity.liquidity = event.params.liquidity;
     entity.save();
   }
@@ -62,7 +63,7 @@ export function handleTokenStaked(event: TokenStaked): void {
 export function handleTokenUnstaked(event: TokenUnstaked): void {
   let entity = Position.load(event.params.tokenId.toHex());
   if (entity != null) {
-    entity.staked = false;
+    entity.staked = BigInt.fromI32(0);
     entity.save();
   }
 }

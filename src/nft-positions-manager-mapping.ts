@@ -7,6 +7,7 @@ import {
   Transfer,
 } from '../generated/NFTPositionsManager/NFTPositionsManager';
 import { Position } from '../generated/schema';
+import { BigInt } from "@graphprotocol/graph-ts";
 
 export function handleIncreaseLiquidity(event: IncreaseLiquidity): void {
   let entity = Position.load(event.params.tokenId.toHex());
@@ -15,7 +16,7 @@ export function handleIncreaseLiquidity(event: IncreaseLiquidity): void {
     entity.approved = null;
     entity.tokenId = event.params.tokenId;
     entity.owner = event.transaction.from;
-    entity.staked = false;
+    entity.staked = BigInt.fromI32(0);;
     entity.oldOwner = null;
   }
   entity.liquidity = event.params.liquidity;
